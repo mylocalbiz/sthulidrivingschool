@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'THULI DRIVING SCHOOL - Code 08, 10, 14 Licences in Lenasia</title>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+
+    
+    <!-- 🟢 START SEO METADATA (ADDED FOR ONLINE VISIBILITY) 🟢 -->
+    <meta name="description" content="S'THULI DRIVING SCHOOL in Lenasia offers expert K53 training for Code 08, Code 10, and Code 14 licences. High pass rates and professional, patient instructors. Book your package today!">
+    <meta name="keywords" content="Driving school, Lenasia, Code 08, Code 10, Code 14, K53, driving lessons, truck licence, heavy vehicle training, learner's licence, South Africa">
+    <meta name="author" content="S'THULI DRIVING SCHOOL">
+    
+    <!-- Open Graph (OG) Tags for Social Media Sharing -->
+    <meta property="og:title" content="S'THULI DRIVING SCHOOL - Drive with Confidence in Lenasia">
+    <meta property="og:description" content="Expert K53 training for Code 08, 10, and 14 licences with proven high pass rates. Start your driving journey today!">
+    <meta property="og:image" content="assets/images/hero/hero.jpeg">
+    <meta property="og:url" content="https://www.sthulidrivingschool.co.za/ (Placeholder)">
+    <meta property="og:type" content="website">
+    <!-- 🔴 END SEO METADATA 🔴 -->
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic components -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom font import and general styling */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --primary-color: #0d47a1; /* Dark Blue */
+            --secondary-color: #d32f2f; /* Red */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .text-primary { color: var(--primary-color); }
+        .bg-primary { background-color: var(--primary-color); }
+        .text-secondary { color: var(--secondary-color); }
+        .bg-secondary { background-color: var(--secondary-color); }
+        .cta-button {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .card {
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        /* Style for the "L" logo graphic */
+        .logo-l {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        /* Styling for the FAQ collapsible panel */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Adjust based on expected content length */
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Specific styling for Instructor Cards */
+        .instructor-card {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+        .instructor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        /* Styling for Blog Cards */
+        .blog-card {
+            border-radius: 0.75rem; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+        /* Ensure body cannot scroll when offcanvas is open */
+        .no-scroll {
+            overflow: hidden;
+        }
+        
+        /* 🟢 SCROLL ANIMATION STYLES 🟢 */
+        .animate-on-scroll {
+            opacity: 0;
+            /* Start slightly below its final position */
+            transform: translateY(30px); 
+            /* Transition for opacity and transform */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            /* Ensure the elements don't suddenly appear before observation starts */
+        }
+        
+        .fade-in-up {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* 🔴 END SCROLL ANIMATION STYLES 🔴 */
+    </style>
+    
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" id="logo-link" class="flex items-center space-x-2">
+                    <div class="logo-l bg-secondary text-white border-2 border-secondary">L</div>
+                    <span class="text-xl font-extrabold text-primary tracking-tight">S'THULI DRIVING SCHOOL</span>
+                </a>
+
+                <!-- Desktop Menu (Visible only on large screens: lg:flex) -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary font-medium transition duration-150">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-primary font-medium transition duration-150">Services</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary font-medium transition duration-150">About Us</a>
+                    <a href="#packages" class="text-gray-600 hover:text-primary font-medium transition duration-150">Pricing</a>
+                    <a href="#faq" class="text-gray-600 hover:text-primary font-medium transition duration-150">FAQ</a>
+                    
+                    <!--<a href="#instructors" class="text-gray-600 hover:text-primary font-medium transition duration-150">Instructors</a>-->
+                    
+                    
+                    <a href="#gallery" class="text-gray-600 hover:text-primary font-medium transition duration-150">Gallery</a>
+                    <!--<a href="#testimonials" class="text-gray-600 hover:text-primary font-medium transition duration-150">Reviews</a>-->
+                    <!--<a href="#statistics" class="text-gray-600 hover:text-primary font-medium transition duration-150">Statistics</a>-->
+                    <!--<a href="#news" class="text-gray-600 hover:text-primary font-medium transition duration-150">News</a>-->
+                    <a href="#contact" class="text-gray-600 hover:text-primary font-medium transition duration-150">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button (Hamburger) (Visible up to large screens: lg:hidden) -->
+                <button id="mobile-menu-button" class="lg:hidden p-2 text-primary focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 🟢 Off-Canvas Menu and Overlay (Visible up to large screens: lg:hidden) 🟢 -->
+    
+    <!-- Overlay: Dims the background and closes the menu on click -->
+    <div id="offcanvas-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden transition-opacity duration-300 opacity-0 pointer-events-none" onclick="closeMobileMenu()"></div>
+
+    <!-- Off-Canvas Menu Panel (Slides from the right) (Visible up to large screens: lg:hidden) -->
+    <div id="offcanvas-menu" class="fixed top-0 right-0 w-64 h-screen bg-white z-50 shadow-xl transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto">
+        
+        <!-- Header with Close Button -->
+        <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-primary text-white sticky top-0">
+            <h3 class="text-lg font-bold">Navigation</h3>
+            <button id="close-menu-button" onclick="closeMobileMenu()" class="p-1 rounded-full hover:bg-white hover:text-primary transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="flex flex-col py-2">
+            <a href="index.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 border-t border-gray-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#services" class="py-3 px-4 text-gray-700 hover:bg-gray-50 border-t border-gray-100" onclick="closeMobileMenu()">Services</a>
+            <a href="#about" class="py-3 px-4 text-gray-700 hover:bg-gray-50 border-t border-gray-100" onclick="closeMobileMenu()">About Us</a>
+            <a href="#packages" class="py-3 px-4 text-gray-700 hover:bg-gray-50 border-t border-gray-100" onclick="closeMobileMenu()">Pricing</a>
+            <a href="#faq" class="py-3 px-4 text-gray-700 hover:bg-gray-50 border-t border-gray-100" onclick="closeMobileMenu()">FAQ</a>
+            <a href="#gallery" class="py-3 px-4 text-gray-700 hover:bg-gray-50 border-t border-gray-100" onclick="closeMobileMenu()">Gallery</a>
+            <a href="#testimonials" class="py-3 px-4 text-gray-700 hover:bg-gray-50 border-t border-gray-100" onclick="closeMobileMenu()">Reviews</a>
+            <a href="#news" class="py-3 px-4 text-gray-700 hover:bg-gray-50 border-t border-gray-100" onclick="closeMobileMenu()">News & Blog</a>
+            <a href="#contact" class="py-3 px-4 text-gray-700 hover:bg-gray-50 border-t border-gray-100" onclick="closeMobileMenu()">Contact</a>
+        </div>
+        
+        <!-- Contact quick link (Mobile/Tablet only) -->
+        <div class="p-4 mt-4 text-center">
+            <a href="https://wa.me/27718093963" target="_blank" class="cta-button inline-flex items-center bg-secondary text-white font-bold py-2 px-4 rounded-full text-sm shadow-lg hover:bg-red-700">
+                <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Us!
+            </a>
+        </div>
+    </div>
+    <!-- 🔴 End Off-Canvas Menu 🔴 -->
+
+    <main id="main-content-wrapper">
+        <!-- Hero Section (No animation needed, it's visible immediately) -->
+        <section id="home" class="relative bg-primary text-white py-24 md:py-32 overflow-hidden">
+            <div class="absolute inset-0 opacity-30 bg-no-repeat bg-cover bg-center" style="background-image: url('assets/images/hero/hero.jpeg');"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+                        Drive with Confidence. Get Your Licence with <span class="text-secondary">S'THULI</span>.
+                    </h1>
+                    <p class="text-xl opacity-90 mb-8">
+                        Expert training for Code 08, Code 10, and Code 14 licences in Lenasia and surrounding areas. Start your journey today!
+                    </p>
+                    <a href="#packages" class="cta-button inline-block bg-secondary text-white font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-red-700 uppercase tracking-wider">
+                        View Packages & Prices
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition / Quick Facts -->
+        <section class="py-16 bg-white animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="text-white p-6 rounded-xl card shadow-lg hover:shadow-xl border-t-4 bg-primary border-primary border-red-500">
+                        <i data-lucide="car" class="w-10 h-10 mx-auto mb-4 text-white"></i>
+                        <h3 class="text-2xl font-bold mb-2">All Licence Codes</h3>
+                        <p class="">Specializing in Code 08 (Light), Code 10 (Heavy), and Code 14 (Articulated).</p>
+                    </div>
+                    <div class="text-white p-6 rounded-xl card shadow-lg hover:shadow-xl border-t-4 bg-primary border-primary border-red-500">
+                        <i data-lucide="book-open-text" class="w-10 h-10 mx-auto mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Learners Class R1000</h3>
+                        <p class="">Affordable Learner's Class for all codes. Get ready for your test quickly.</p>
+                    </div>
+                    <div class="text-white p-6 rounded-xl card shadow-lg hover:shadow-xl border-t-4 bg-primary border-primary border-red-500">
+                        <i data-lucide="map-pin" class="w-10 h-10 mx-auto mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Transport Available</h3>
+                        <p class="">Transport service available in surrounding areas for only R300.</p>
+                    </div>
+                    <!--
+                    <div class="p-6 rounded-xl card shadow-lg hover:shadow-xl border-t-4 border-primary">
+                        <i data-lucide="map-pin" class="w-10 h-10 mx-auto mb-4 text-primary"></i>
+                        <h3 class="text-2xl font-bold mb-2">Transport Available</h3>
+                        <p class="text-gray-600">Transport service available in surrounding areas for only R300.</p>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW Statistics Section -->
+        <section id="statistics" class="py-20 bg-primary text-white animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-white mb-12">Our Success By The Numbers</h2>
+                <p class="text-xl opacity-80 mb-12 max-w-4xl mx-auto">
+                    We measure our commitment to safety and excellence in every lesson. See the statistics that prove why S'THULI is the trusted choice for licence training.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Stat 1: Pass Rate -->
+                    <div class="p-4 rounded-xl">
+                        <i data-lucide="zap" class="w-12 h-12 mx-auto mb-3 text-secondary"></i>
+                        <p class="lg:text-5xl text-4xl font-extrabold mb-1">92%</p>
+                        <p class="lg:text-lg font-medium opacity-90">First-Time Pass Rate</p>
+                    </div>
+
+                    <!-- Stat 2: Total Graduates -->
+                    <div class="p-4 rounded-xl">
+                        <i data-lucide="users" class="w-12 h-12 mx-auto mb-3 text-secondary"></i>
+                        <p class="lg:text-5xl text-4xl font-extrabold mb-1">1,500+</p>
+                        <p class="lg:text-lg font-medium opacity-90">Successful Graduates</p>
+                    </div>
+
+                    <!-- Stat 3: Years of Experience -->
+                    <div class="p-4 rounded-xl">
+                        <i data-lucide="calendar" class="w-12 h-12 mx-auto mb-3 text-secondary"></i>
+                        <p class="lg:text-5xl text-4xl font-extrabold mb-1">7+</p>
+                        <p class="lg:text-lg font-medium opacity-90">Years of Operation</p>
+                    </div>
+                    
+                    <!-- Stat 4: Licence Codes -->
+                    <div class="p-4 rounded-xl">
+                        <i data-lucide="truck" class="w-12 h-12 mx-auto mb-3 text-secondary"></i>
+                        <p class="lg:text-5xl text-4xl font-extrabold mb-1">3</p>
+                        <p class="lg:text-lg font-medium opacity-90">Licence Codes Trained</p>
+                    </div>
+
+                </div>
+                
+                <a href="#packages" class="inline-block mt-12 cta-button bg-secondary text-white font-bold lg:py-3 py-5 lg:px-8 px-5 rounded-full lg:text-lg text-sm shadow-xl hover:bg-red-700 uppercase tracking-wider transition duration-150">
+                    See Our Guaranteed Packages
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-50 animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-primary mb-12">Comprehensive Driving Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service 1: Learners Class -->
+                    <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg border-b-4 border-secondary card">
+                        <i data-lucide="graduation-cap" class="w-10 h-10 mb-4 text-secondary"></i>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Learners Class</h3>
+                        <p class="text-gray-600 text-center">Comprehensive lessons for all learner codes (R1000) to prepare you for the written test.</p>
+                        <p class="text-lg font-bold mt-2 text-primary">Booking Fee: R170</p>
+                    </div>
+                    <!-- Service 2: Licence Training -->
+                    <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg border-b-4 border-secondary card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-steering-wheel-icon lucide-steering-wheel w-10 h-10 mb-4 text-secondary">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m3.3 7 7 4"/>
+                            <path d="m13.7 11 7-4"/>
+                            <path d="M12 14v8"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Driver Licence Training</h3>
+                        <p class="text-gray-600 text-center">Practical training for Codes 08, 10, and 14 with expert, patient instructors.</p>
+                        <p class="text-lg font-bold mt-2 text-primary">Booking Fee: R470</p>
+                    </div>
+                    <!-- Service 3: Renewals & PrDP -->
+                    <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg border-b-4 border-secondary card">
+                        <i data-lucide="refresh-ccw" class="w-10 h-10 mb-4 text-secondary"></i>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Renewals & PrDP</h3>
+                        <p class="text-gray-600 text-center">We assist with Professional Driving Permit (PrDP) and driver's licence renewals.</p>
+                    </div>
+                    <!-- Service 4: Traffic Register -->
+                    <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg border-b-4 border-secondary card">
+                        <i data-lucide="file-text" class="w-10 h-10 mb-4 text-secondary"></i>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Traffic Register</h3>
+                        <p class="text-gray-600 text-center">Assistance with the necessary traffic register documentation process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-white animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:flex lg:items-center lg:space-x-12">
+                    <!-- Image Placeholder/Mascot -->
+                    <div class="lg:w-1/3 mb-8 lg:mb-0 text-center p-4">
+                        <div class="bg-secondary p-8 rounded-xl shadow-xl inline-block">
+                             <i data-lucide="award" class="w-16 h-16 text-white mx-auto"></i>
+                        </div>
+                        <p class="text-sm mt-3 text-gray-600 font-medium">Accredited CK: 201803468407</p>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="lg:w-2/3">
+                        <h2 class="text-4xl font-extrabold text-primary mb-6">Building Confident Drivers Since 2018</h2>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                            S'THULI DRIVING SCHOOL is a trusted name in Lenasia and surrounding areas, dedicated to providing **high-quality, professional driver training**. Since our establishment in **2018**, we have focused on safety, responsibility, and ensuring our students pass their licence tests with confidence. Our team of accredited instructors specializes in various codes, giving you the best foundation for a lifetime of safe driving.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
+                            <p class="flex items-center font-medium">
+                                <i data-lucide="zap" class="w-5 h-5 text-secondary mr-2"></i> Proven High Pass Rate
+                            </p>
+                             <p class="flex items-center font-medium">
+                                <i data-lucide="map" class="w-5 h-5 text-secondary mr-2"></i> Local Experts in Lenasia
+                            </p>
+                             <p class="flex items-center font-medium">
+                                <i data-lucide="truck" class="w-5 h-5 text-secondary mr-2"></i> Training for Codes 08, 10, & 14
+                            </p>
+                            <p class="flex items-center font-medium">
+                                <i data-lucide="user-check" class="w-5 h-5 text-secondary mr-2"></i> Patient & Accredited Instructors
+                            </p>
+                        </div>
+                        <a href="#contact" class="inline-block mt-8 text-primary font-semibold hover:text-secondary transition duration-150 border-b-2 border-primary hover:border-secondary">
+                            Ready to Start Driving? Contact Us &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section id="packages" class="py-20  bg-primary animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-white mb-16">Our Licence Packages & Pricing</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Package Card 1: CODE 08 (Car) -->
+                    <div class="card bg-white p-8 rounded-xl shadow-xl flex flex-col border-t-8 border-secondary">
+                        <h3 class="text-2xl font-bold text-center mb-4 text-primary">CODE 08 (Light Motor)</h3>
+                        <p class="text-sm text-gray-500 text-center mb-6">Standard Car Licence</p>
+                        
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg mb-4">
+                            <span class="font-medium text-lg">Per Lesson Rate:</span>
+                            <span class="text-secondary text-xl font-extrabold">R200.00</span>
+                        </div>
+
+                        <div class="text-center mb-8">
+                            <p class="text-4xl font-extrabold text-primary mb-1">R6,500.00</p>
+                            <p class="text-gray-600 font-semibold">Full Package Price</p>
+                        </div>
+
+                        <div class="space-y-3 mb-8">
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Comprehensive Driving Lessons
+                            </p>
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Vehicle Hire for Test
+                            </p>
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Test Preparation & Yard Practice
+                            </p>
+                        </div>
+                        
+                        <a href="#contact" class="cta-button bg-primary text-white text-center font-bold py-3 rounded-lg mt-auto hover:bg-blue-800" onclick="closeMobileMenu()">
+                            Book Code 08
+                        </a>
+                    </div>
+                    
+                    <!-- Package Card 2: CODE 10 (Heavy Motor) -->
+                    <div class="card bg-white p-8 rounded-xl shadow-xl flex flex-col border-t-8 border-primary relative transform lg:scale-105 md:scale-100 shadow-2xl z-20">
+                         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-secondary text-white font-bold rounded-full text-sm uppercase tracking-wider">
+                            Popular Choice
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-4 text-primary mt-4">CODE 10 (Heavy Motor)</h3>
+                        <p class="text-sm text-gray-500 text-center mb-6">Truck/Lorry Licence</p>
+                        
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg mb-4">
+                            <span class="font-medium text-lg">Per Lesson Rate:</span>
+                            <span class="text-secondary text-xl font-extrabold">R200.00</span>
+                        </div>
+
+                        <div class="text-center mb-8">
+                            <p class="text-4xl font-extrabold text-primary mb-1">R6,500.00</p>
+                            <p class="text-gray-600 font-semibold">Full Package Price</p>
+                        </div>
+
+                        <div class="space-y-3 mb-8">
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Dedicated Truck Training
+                            </p>
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Use of Code 10 Vehicle for Test
+                            </p>
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Pre-Trip Inspection Guidance
+                            </p>
+                        </div>
+                        
+                        <a href="#contact" class="cta-button bg-secondary text-white text-center font-bold py-3 rounded-lg mt-auto hover:bg-red-700" onclick="closeMobileMenu()">
+                            Book Code 10
+                        </a>
+                    </div>
+
+                    <!-- Package Card 3: CODE 14 (Articulated Heavy Motor) -->
+                    <div class="card bg-white p-8 rounded-xl shadow-xl flex flex-col border-t-8 border-secondary">
+                        <h3 class="text-2xl font-bold text-center mb-4 text-primary">CODE 14 (Articulated)</h3>
+                        <p class="text-sm text-gray-500 text-center mb-6">Truck and Trailer Licence</p>
+
+                         <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg mb-4">
+                            <span class="font-medium text-lg">Per Lesson Rate:</span>
+                            <span class="text-secondary text-xl font-extrabold">R400.00</span>
+                        </div>
+                        
+                        <div class="text-center mb-8">
+                            <p class="text-4xl font-extrabold text-primary mb-1">R10,500.00</p>
+                            <p class="text-gray-600 font-semibold">Full Package Price</p>
+                        </div>
+
+                        <div class="space-y-3 mb-8">
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Advanced Articulated Vehicle Training
+                            </p>
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Trailer Coupling & Manoeuvring
+                            </p>
+                            <p class="flex items-center text-gray-700">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Use of Code 14 Vehicle for Test
+                            </p>
+                        </div>
+                        
+                        <a href="#contact" class="cta-button bg-primary text-white text-center font-bold py-3 rounded-lg mt-auto hover:bg-blue-800" onclick="closeMobileMenu()">
+                            Book Code 14
+                        </a>
+                    </div>
+
+                </div>
+                
+                <div class="text-center mt-12 bg-yellow-50 p-6 rounded-xl border border-yellow-300">
+                    <p class="text-lg font-semibold text-gray-700">
+                        <span class="text-secondary font-extrabold">NOTICE:</span> All packages require an initial **Deposit of R2,500.00**.
+                        <br class="hidden sm:inline"> Ask us about our service to help you with **Online Booking for R300**.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-white animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-primary text-center mb-12">Frequently Asked Questions</h2>
+                
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-gray-50 rounded-xl overflow-hidden border border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center p-5 font-semibold text-lg text-left text-primary hover:bg-gray-100 transition duration-150">
+                            <span>How long is a single driving lesson?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-secondary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer text-gray-700 bg-white"><!--border-t border-gray-200-->
+                            <p class="p-5">
+                                Each standard driving lesson for Codes 08 and 10 is 60 minutes (1 hour) long. 
+                                For Code 14, lessons are typically longer to accommodate the complexity of the vehicle and 
+                                maneuvers. We structure our lessons to maximize practical learning time.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-gray-50 rounded-xl overflow-hidden border border-gray-200"><!--shadow-lg-->
+                        <button class="faq-question w-full flex justify-between items-center p-5 font-semibold text-lg text-left text-primary hover:bg-gray-100 transition duration-150">
+                            <span>What is included in the Learners Class for R1000?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-secondary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer text-gray-700 bg-white">
+                            <p class="p-5">
+                                The R1000 Learner's Class covers comprehensive theory training on road rules, signs, and vehicle controls 
+                                for all licence codes (08, 10, and 14). It includes study materials and preparation to ensure you pass the 
+                                written K53 test on your first try.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-gray-50 rounded-xl overflow-hidden border border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center p-5 font-semibold text-lg text-left text-primary hover:bg-gray-100 transition duration-150">
+                            <span>How does the R300 transport service work?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-secondary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer text-gray-700 bg-white">
+                            <p class="p-5">
+                                The R300 is a once-off charge for our transport service, available to students in Lenasia and surrounding areas. 
+                                This fee covers picking you up and dropping you off for your lessons, making your training process hassle-free 
+                                and convenient.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-gray-50 rounded-xl overflow-hidden border border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center p-5 font-semibold text-lg text-left text-primary hover:bg-gray-100 transition duration-150">
+                            <span>What happens to the R2,500.00 Deposit?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-secondary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer text-gray-700 bg-white">
+                            <p class="p-5">
+                                The R2,500.00 is an initial deposit required to secure your full package slot and lessons. 
+                                This amount is subtracted from the final package price. It is non-refundable but ensures your 
+                                place in our training schedule.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructor Profiles Section 
+        <section id="instructors" class="py-20 bg-white animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-primary mb-6">Meet Our Expert Instructors</h2>
+                <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Highly experienced and accredited, our patient instructors are dedicated to your success on the K53 test and the open road.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <div class="instructor-card">
+                        <img src="https://placehold.co/400x300/0d47a1/ffffff?text=Mr.+S'Thuli" 
+                             alt="Instructor S'Thuli" 
+                             class="w-full h-48 object-cover object-top"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/0d47a1/ffffff?text=Mr.+S'Thuli+Founder';"
+                        >
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary">Mr. S'Thuli</h3>
+                            <p class="text-secondary font-semibold mb-3">Founder & Lead Code 14 Expert</p>
+                            <p class="text-gray-700 text-sm mb-4 text-left">
+                                With over 20 years of experience, S'Thuli specializes in heavy articulated vehicles (Code 14) and advanced driving techniques. He ensures all students grasp the full scope of road safety and vehicle control.
+                            </p>
+                            <span class="inline-flex items-center px-3 py-1 bg-blue-100 text-primary text-xs font-medium rounded-full">
+                                <i data-lucide="truck" class="w-4 h-4 mr-1"></i> Code 14 Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="instructor-card">
+                         <img src="https://placehold.co/400x300/d32f2f/ffffff?text=Ms.+Lerato" 
+                             alt="Instructor Lerato" 
+                             class="w-full h-48 object-cover object-top"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/d32f2f/ffffff?text=Ms.+Lerato+Code+08';"
+                        >
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary">Ms. Lerato</h3>
+                            <p class="text-secondary font-semibold mb-3">Code 08 & Learner's Class Trainer</p>
+                            <p class="text-gray-700 text-sm mb-4 text-left">
+                                Lerato is renowned for her patience and calm teaching style, making her the perfect choice for nervous, first-time drivers. She excels in teaching parallel parking and alley docking.
+                            </p>
+                            <span class="inline-flex items-center px-3 py-1 bg-red-100 text-secondary text-xs font-medium rounded-full">
+                                <i data-lucide="car" class="w-4 h-4 mr-1"></i> Code 08 Expert
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="instructor-card">
+                        <img src="https://placehold.co/400x300/37474f/ffffff?text=Mr.+Sipho" 
+                             alt="Instructor Sipho" 
+                             class="w-full h-48 object-cover object-top"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/37474f/ffffff?text=Mr.+Sipho+Code+10';"
+                        >
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary">Mr. Sipho</h3>
+                            <p class="text-secondary font-semibold mb-3">Code 10 Specialist & Defensive Driving</p>
+                            <p class="text-gray-700 text-sm mb-4 text-left">
+                                Sipho focuses on heavy motor vehicles (Code 10), providing detailed instruction on pre-trip inspections and safe load management, essential for professional driving careers.
+                            </p>
+                            <span class="inline-flex items-center px-3 py-1 bg-gray-200 text-gray-700 text-xs font-medium rounded-full">
+                                <i data-lucide="steering-wheel" class="w-4 h-4 mr-1"></i> Code 10 Trainer
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>-->
+
+        
+        
+        
+
+        
+
+        
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-white animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-primary mb-6">Our Wall of Success</h2>
+                <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                    See the moment our students achieve their goal! Dedicated training delivers real results.
+                </p>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Item 1: Uploaded Image -->
+                     <!--
+                     <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="assets/images/gallery/gallery01.jpg" 
+                             alt="Successful Code 08 Student" 
+                             class="w-full h-full object-cover aspect-square transition duration-300 group-hover:scale-105"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x400/0d47a1/ffffff?text=Code+08+Pass';"
+                        >
+                        <div class="absolute inset-0 bg-primary bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white font-bold text-lg p-2 rounded-full border-2 border-white">Code 08 Passed!</p>
+                        </div>
+                    </div>
+                -->
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="assets/images/gallery/gallery01.jpg" 
+                             alt="Successful Code 08 Student" 
+                             class="w-full h-full object-cover aspect-square transition duration-300 group-hover:scale-105"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x400/0d47a1/ffffff?text=Code+08+Pass';"
+                        >
+                        <div class="absolute inset-0 bg-gray-600 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white font-bold text-lg p-2 rounded-full border-2 border-white">Code 08 Passed!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Placeholder Item 2: Code 10 -->
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="assets/images/gallery/gallery02.jpeg" 
+                             alt="Successful Code 10 Student" 
+                             class="w-full h-full object-cover aspect-square transition duration-300 group-hover:scale-105"
+                        >
+                        <div class="absolute inset-0 bg-gray-600 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white font-bold text-lg p-2 rounded-full border-2 border-white">Code 10 Passed!</p>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Item 3: Code 08 -->
+                     <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="assets/images/gallery/gallery03.jpeg" 
+                             alt="Another successful Code 14 Student" 
+                             class="w-full h-full object-cover aspect-square transition duration-300 group-hover:scale-105"
+                        >
+                        <div class="absolute inset-0 bg-gray-600 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white font-bold text-lg p-2 rounded-full border-2 border-white">Code 14 Passed!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Placeholder Item 4: Code 08 -->
+                     <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="assets/images/gallery/gallery04.jpeg" 
+                             alt="Another successful Code 08 Student" 
+                             class="w-full h-full object-cover aspect-square transition duration-300 group-hover:scale-105"
+                        >
+                        <div class="absolute inset-0 bg-gray-600 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white font-bold text-lg p-2 rounded-full border-2 border-white">Licence Achieved!</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-gray-50 animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-primary mb-12">What Our Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="p-6 bg-white rounded-xl shadow-xl card border-t-4 border-secondary">
+                        <i data-lucide="quote" class="w-8 h-8 mx-auto mb-4 text-secondary"></i>
+                        <p class="text-lg italic text-gray-700 mb-4">
+                            "The Code 10 package was fantastic! My instructor was patient and the full package price was excellent value. I passed on the first attempt."
+                        </p>
+                        <div class="flex justify-center mb-2">
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                        </div>
+                        <p class="font-semibold text-primary">- Thabo M.</p>
+                        <p class="text-sm text-gray-500">Code 10 Licence Holder</p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="p-6 bg-white rounded-xl shadow-xl card border-t-4 border-secondary">
+                        <i data-lucide="quote" class="w-8 h-8 mx-auto mb-4 text-secondary"></i>
+                        <p class="text-lg italic text-gray-700 mb-4">
+                            "The Learners Class for R1000 was comprehensive and easy to follow. Plus, the transport service made it incredibly convenient for lessons!"
+                        </p>
+                        <div class="flex justify-center mb-2">
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                        </div>
+                        <p class="font-semibold text-primary">- Nomusa Z.</p>
+                        <p class="text-sm text-gray-500">Code 08 Student</p>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="p-6 bg-white rounded-xl shadow-xl card border-t-4 border-secondary">
+                        <i data-lucide="quote" class="w-8 h-8 mx-auto mb-4 text-secondary"></i>
+                        <p class="text-lg italic text-gray-700 mb-4">
+                            "S'THULI helped me with my PrDP renewal and the Traffic Register process. It was fast, professional, and took all the headache away. Highly recommend!"
+                        </p>
+                        <div class="flex justify-center mb-2">
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-yellow-500 text-yellow-500"></i>
+                        </div>
+                        <p class="font-semibold text-primary">- Sipho D.</p>
+                        <p class="text-sm text-gray-500">PrDP Renewal Client</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- News & Blog Section -->
+        <section id="news" class="py-20 bg-white animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-primary mb-6">Latest Driving News & Tips</h2>
+                <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Stay informed with our blog posts on K53 updates, road safety, and getting your licence fast!
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Blog Post 1 - K53 Yard Tips -->
+                    <div class="blog-card text-left bg-gray-50 overflow-hidden border border-gray-200" onclick="showBlogPost(1)">
+                        <img src="assets/images/blog/Mastering the K53_thumb.webp" 
+                             alt="K53 Yard Tips" 
+                             class="w-full h-48 object-cover object-center"
+                        >
+                        <div class="p-6">
+                            <p class="text-sm font-semibold text-secondary mb-2">TRAINING TIPS | SEPT 25, 2025</p>
+                            <h3 class="text-xl font-bold text-primary mb-3 leading-snug">
+                                Mastering the K53 Yard Test: 5 Common Mistakes to Avoid
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Our instructors share essential, inside tips on parallel parking and three-point turns to ensure you don't drop a single point on test day.
+                            </p>
+                            <span class="text-primary font-semibold hover:text-secondary text-sm">Read More &rarr;</span>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2 - Driving Safty Tips-->
+                    <div class="blog-card text-left bg-gray-50 overflow-hidden border border-gray-200" onclick="showBlogPost(2)">
+                        <img src="assets/images/blog/7 Essential Tips.jpg" 
+                             alt="Code 14 Regulations" 
+                             class="w-full h-48 object-cover object-center"
+                        >
+                        <div class="p-6">
+                            <p class="text-sm font-semibold text-secondary mb-2">SAFTY TIPS | SEPT 15, 2025</p>
+                            <h3 class="text-xl font-bold text-primary mb-3 leading-snug">
+                                Mastering the Road: 7 Essential Tips on How to Be a Good Driver
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Becoming a "good driver" goes far beyond simply passing your K53 test. It means being considerate, and prioritizing safety at all times.
+                            </p>
+                            <span class="text-primary font-semibold hover:text-secondary text-sm">Read More &rarr;</span>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 3 - Learners Class Success Story -->
+                    <div class="blog-card text-left bg-gray-50 overflow-hidden border border-gray-200" onclick="showBlogPost(3)">
+                        <img src="assets/images/blog/R1000.Learners.Class_thumb.webp" 
+                             alt="Learners Licence Success" 
+                             class="w-full h-48 object-cover object-center"
+                        >
+                        <div class="p-6">
+                            <p class="text-sm font-semibold text-secondary mb-2">SUCCESS STORY | SEPT 10, 2025</p>
+                            <h3 class="text-xl font-bold text-primary mb-3 leading-snug">
+                                How Our R1000 Learner's Class Guarantees Pass Success
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Hear from recent students who passed their learner's test on the first try and what makes our preparation classes so effective.
+                            </p>
+                            <span class="text-primary font-semibold hover:text-secondary text-sm">Read More &rarr;</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section with Form -->
+        <section id="contact" class="py-20 bg-primary text-white animate-on-scroll">
+            
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-white mb-12">Book a Lesson or Get in Touch</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                    
+                    <!-- Contact Details (Left Column) -->
+                    <div class="p-8 col-span-5 lg:col-span-2 rounded-xl bg-blue-900 shadow-2xl h-full">
+                        <h3 class="text-2xl font-bold mb-6 border-b border-blue-700 pb-3">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Phone Numbers -->
+                            <div class="flex items-start">
+                                <i data-lucide="phone" class="w-6 h-6 mr-3 text-secondary flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-xl">Call Us:</p>
+                                    <p class="text-lg"><a href="tel:+27833426269" class="hover:underline">083 342 6269</a> (Primary)</p>
+                                    <p class="text-lg"><a href="tel:+27718093963" class="hover:underline">071 809 3963</a></p>
+                                    <p class="text-lg"><a href="tel:+27730554434" class="hover:underline">073 055 4434</a></p>
+                                </div>
+                            </div>
+                            
+                            <!-- WhatsApp -->
+                            <div class="flex items-start">
+                                <svg class="w-6 h-6 mr-3 text-green-400 flex-shrink-0 mt-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path fill="currentColor" fill-rule="evenodd" d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z" clip-rule="evenodd"/>
+  <path fill="currentColor" d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"/>
+</svg>
+
+                                
+                                <div>
+                                    <p class="font-semibold text-xl">WhatsApp (Best Option):</p>
+                                    <p class="text-lg">
+                                        <a href="https://wa.me/27718093963" target="_blank" class="text-green-300 hover:text-green-200 hover:underline">
+                                            071 809 3963 - Message Us Now!
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="w-6 h-6 mr-3 text-secondary flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-xl">Our Address:</p>
+                                    <p class="text-lg">1357 N Section Thembalihle Ext 9,</p>
+                                    <p class="text-lg">Lenasia, 1824</p>
+                                </div>
+                            </div>
+
+                            <!-- Housrs -->
+                            <div class="flex items-start space-x-4">
+                            <i data-lucide="clock" class="w-6 h-6 text-secondary flex-shrink-0 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-xl">Operating Hours</p>
+                                <p class="text-gray-100">Mon - Fri: 08:00 - 17:00</p>
+                                <p class="text-gray-100">Sat: 08:00 - 14:00</p>
+                                <p class="text-gray-100 font-bold mt-1">Sun & Public Holidays: Closed</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enquiry Form (Right Column) - WhatsApp Integrated -->
+                    <div class="col-span-5 lg:col-span-3 p-8 bg-white rounded-xl shadow-2xl text-gray-800">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Send Enquiry via WhatsApp</h3>
+                        <p class="text-gray-600 mb-6">Fill in the details below, and we'll instantly generate a draft message for you to send on WhatsApp.</p>
+                        <form id="enquiry-form" class="space-y-4">
+                            
+                            <div>
+                                <label for="full-name" class="block text-sm font-medium text-gray-700">Your Full Name</label>
+                                <input type="text" id="full-name" name="full-name" required 
+                                       class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3 border">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address (Optional)</label>
+                                <input type="email" id="email" name="email" 
+                                       class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3 border">
+                            </div>
+
+                            <div>
+                                <label for="licence-code" class="block text-sm font-medium text-gray-700">Licence Code of Interest</label>
+                                <select id="licence-code" name="licence-code" required
+                                        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3 border bg-white">
+                                    <option value="">-- Select Code --</option>
+                                    <option value="Learners Class (R1000)">Learner's Class (R1000)</option>
+                                    <option value="Code 08 (R6500)">Code 08 (Light Motor) Package</option>
+                                    <option value="Code 10 (R6500)">Code 10 (Heavy Motor) Package</option>
+                                    <option value="Code 14 (R10500)">Code 14 (Articulated) Package</option>
+                                    <option value="PrDP/Renewal">PrDP / Renewal Assistance</option>
+                                    <option value="General Query">General Query</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Your Message / Query</label>
+                                <textarea id="message" name="message" rows="3" required 
+                                          class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3 border"
+                                          placeholder="e.g., I'd like to book lessons for Code 10 and discuss transport availability."></textarea>
+                            </div>
+
+                            <button type="submit" class="cta-button w-full bg-secondary text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-red-700 transition duration-150 flex items-center justify-center">
+                                <i data-lucide="message-square-text" class="w-5 h-5 mr-2"></i> Open WhatsApp Chat
+                            </button>
+                        </form>
+                        <p id="form-message" class="mt-4 text-center font-medium text-sm text-green-600 hidden">
+                             <i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i> WhatsApp chat initiated! Please hit 'Send' in the new window.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 🟢 FLOATING WHATSAPP BUTTON (Desktop Only) 🟢 -->
+    <!-- Switched from md:flex to lg:flex -->
+    <a href="https://wa.me/27718093963" target="_blank" 
+       class="fixed bottom-6 right-6 z-50 
+              hidden lg:flex items-center 
+              bg-secondary text-white font-bold 
+              py-3 px-5 rounded-full 
+              shadow-2xl hover:bg-red-700 
+              transition duration-300 ease-in-out 
+              scale-100 hover:scale-[1.05] cta-button">
+        <i data-lucide="message-circle" class="w-6 h-6 mr-2"></i> 
+        WhatsApp Now
+    </a>
+    <!-- 🔴 END FLOATING WHATSAPP BUTTON 🔴 -->
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-16 pb-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12  pb-10">
+                <div class="space-y-4">
+                    <a href="#home" id="footer-logo-link" class="flex items-center justify-start space-x-2">
+                        <div class="logo-l bg-secondary text-white border-2 border-secondary">L</div>
+                        <span class="text-xl font-extrabold text-white tracking-tight">S'THULI DRIVING SCHOOL</span>
+                    </a>
+                    <p class="text-gray-400 text-sm">Expert K53 training for Codes 08, 10, and 14 in Lenasia. Drive safe, pass first time.</p>
+                    <p class="text-gray-500 text-xs">CK: 201803468407 | Est. 2018</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-secondary uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-150">Our Services</a></li>
+                        <li><a href="#packages" class="text-gray-400 hover:text-white transition duration-150">Pricing & Packages</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-150">Success Stories</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition duration-150">FAQ</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition duration-150">News & Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-1 md:col-span-2">
+                    <h4 class="text-lg font-semibold mb-4 text-secondary uppercase tracking-wider">Contact Us</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start">
+                            <i data-lucide="phone" class="w-4 h-4 mr-3 text-secondary flex-shrink-0 mt-1"></i>
+                            <div>
+                                <p class="text-white font-medium">Call/WhatsApp:</p>
+                                <a href="tel:+27833426269" class="text-gray-400 hover:text-white block">083 342 6269</a>
+                                <a href="https://wa.me/27718093963" target="_blank" class="text-gray-400 hover:text-white block">071 809 3963 (WhatsApp)</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-3 text-secondary flex-shrink-0 mt-1"></i>
+                            <div>
+                                <p class="text-white font-medium">Visit Our Location:</p>
+                                <p class="text-gray-400">1357 N Section Thembalihle Ext 9, Lenasia, 1824</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 lg:col-span-1">
+                    <h4 class="text-lg font-semibold mb-4 text-secondary uppercase tracking-wider">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/27718093963" target="_blank" class="text-gray-400 hover:text-green-500 transition duration-150" aria-label="WhatsApp">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://www.facebook.com/SthuliDrivingSchool" target="_blank" class="text-gray-400 hover:text-blue-500 transition duration-150" aria-label="Facebook">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://www.instagram.com/SthuliDrivingSchool" target="_blank" class="text-gray-400 hover:text-pink-500 transition duration-150" aria-label="Instagram">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@SthuliDrivingSchool" target="_blank" class="text-gray-400 hover:text-red-500 transition duration-150" aria-label="TikTok">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <p class="text-gray-500 text-sm border-b border-gray-700 pb-8">
+                    &copy; <span id="current-year"></span> S'THULI DRIVING SCHOOL. All Rights Reserved.
+                </p>
+                <p class="text-gray-500 text-lg mt-5">
+                    Website Designed by <a href="#" onclick="openDesignerModal(event)" class="text-secondary hover:text-white underline font-medium">Click For Designers Info</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="designer-modal" class="fixed inset-0 bg-black bg-opacity-90 z-[100] hidden items-center justify-center p-4 transition-opacity duration-300" onclick="closeDesignerModal()">
+        <div class="bg-white max-w-lg w-full p-6 rounded-xl shadow-2xl relative" onclick="event.stopPropagation()">
+            <button class="absolute top-3 right-3 text-gray-500 hover:text-secondary transition" onclick="closeDesignerModal()">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="text-center pb-4 border-b">
+                <div class="logo-l bg-primary text-white border-2 border-primary mx-auto mb-4 scale-150">D</div>
+                <h3 class="text-2xl font-extrabold text-primary mb-1">I'm Jacob Ntsoele</h3>
+                <p class="text-sm text-secondary font-semibold">Freelance Website Designer, Graphic Designer</p>
+            </div>
+            
+            <div class="pt-4 space-y-4">
+                <h4 class="text-lg font-bold text-gray-800 border-b pb-2">Contact Details</h4>
+                <div class="space-y-3 text-gray-700">
+                    <div class="flex items-center">
+                        <i data-lucide="user-check" class="w-5 h-5 mr-3 text-secondary"></i>
+                        <span class="font-medium">Designer's Name:</span> Jacob
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="phone" class="w-5 h-5 mr-3 text-secondary"></i>
+                        <span class="font-medium">Phone:</span> <a href="tel:+27753170287" class="hover:text-primary transition">+27 75 317 0287</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="mail" class="w-5 h-5 mr-3 text-secondary"></i>
+                        <span class="font-medium">Email:</span> <a href="mailto:ntsoele.sello@protonmail.com" class="hover:text-primary transition">ntsoele.sello@protonmail.com</a>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-gray-800 border-b pb-2 pt-4">Services Offered</h4>
+                <ul class="text-gray-700 list-inside list-disc space-y-1 pl-4">
+                    <li>Website Design & Development</li>
+                    <li>UI/UX Design</li>
+                    <li>Graphic work, Posters, Mockups, Brand Identity</li>
+                </ul>
+
+                <!--
+                <h4 class="text-lg font-bold text-gray-800 border-b pb-2 pt-4">Connect Online</h4>
+                <div class="flex justify-center space-x-6">
+                    <a href="DESIGNER_FACEBOOK_LINK" target="_blank" class="text-gray-500 hover:text-blue-600 transition" aria-label="Facebook">
+                        <i data-lucide="facebook" class="w-6 h-6"></i>
+                    </a>
+                    <a href="DESIGNER_LINKEDIN_LINK" target="_blank" class="text-gray-500 hover:text-blue-700 transition" aria-label="LinkedIn">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="DESIGNER_PORTFOLIO_LINK" target="_blank" class="text-gray-500 hover:text-primary transition" aria-label="Portfolio">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- JavaScript for interactivity and animations -->
+    <script>
+        let originalMainContent = '';
+        const mainContentWrapper = document.getElementById('main-content-wrapper');
+
+        // Blog post content data
+        const blogPosts = [
+            null, // Placeholder for index 0 to match post IDs 1, 2, 3
+            {
+                id: 1,
+                title: "Mastering the K53 Yard Test: 5 Common Mistakes to Avoid",
+                date: "SEPT 25, 2025",
+                category: "TRAINING TIPS",
+                imageUrl: "assets/images/blog/Mastering the K53.webp",
+                content: `
+                    <p class="mb-6 leading-relaxed">The K53 yard test is where many aspiring drivers lose easy points, often due to nerves or slight procedural errors. Our instructors have compiled the top five mistakes we see and exactly how you can avoid them to ensure a smooth pass.</p>
+                    
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">1. Forgetting Observations</h3>
+                    <p class="mb-4 leading-relaxed">This is the most common mistake! Every single action, from pulling off to parallel parking, must be preceded by a full observation sequence. **Check your mirrors, blind spots, and signal.** Remember: if you stop, you must check before moving again.</p>
+                    
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">2. Hitting the Pole during Alley Docking</h3>
+                    <p class="mb-4 leading-relaxed">Misjudging the angle or steering too late is a frequent issue. Practice is key here. Ensure your vehicle is positioned correctly before reversing and use your side mirrors effectively to guide your vehicle. If you feel you’re too close, stop, perform the necessary observations, and adjust your angle *before* proceeding.</p>
+                    
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">3. Rolling Back on the Inclined Plane</h3>
+                    <p class="mb-4 leading-relaxed">The hill start (inclined plane) requires precise clutch control. The critical error is allowing the vehicle to roll back more than 10cm. Use the handbrake correctly: apply it, find your biting point, release the handbrake slowly, and apply accelerator smoothly. The key is balance!</p>
+                    
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">4. Steering with One Hand</h3>
+                    <p class="mb-4 leading-relaxed">
+                        During the yard test, you must always steer using the pull-push method 
+                        (with the exception of advanced Code 14 maneuvers where appropriate). 
+                        Steering with only one hand is an immediate fault under K53 standards.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">5. Incorrect Parking Brake Application</h3>
+                    <p class="mb-4 leading-relaxed">When finishing a maneuver, ensure you apply the handbrake first, then select neutral (if manual) or park (if automatic) and finally, turn off the ignition. Getting this sequence wrong can cost you points. </p>
+                    
+                    <div class="mt-8 p-4 bg-yellow-50 border-l-4 border-secondary rounded-lg">
+                        <p class="font-semibold text-gray-700">
+                            Ready to pass your K53 test? Our expert instructors cover these maneuvers daily. 
+                            <a href="index.html#contact" class="text-secondary hover:underline font-bold">Book a lesson today!</a>
+                        </p>
+                    </div>
+                `
+            },
+            {
+                id: 2,
+                title: "Mastering the Road: 7 Essential Tips on How to Be a Good Driver",
+                date: "SEPT 15, 2025",
+                category: "DRIVING SAFTY TIPS",
+                imageUrl: "assets/images/blog/7 Essential Tips.jpg",
+                content: `
+                    <p class="mb-6 leading-relaxed">
+                        Becoming a 'good driver' goes far beyond simply passing your K53 test. It means being defensive, 
+                        considerate, and prioritizing safety at all times. Whether you are a learner driver or an 
+                        experienced Code 14 professional, continuously improving your habits is crucial for 
+                        South African roads.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">
+                        1. Master the K53 System
+                    </h3>
+                    <p class="mb-4 leading-relaxed">
+                        The K53 driving system isn't just for tests; it teaches vital defensive driving techniques. 
+                        Always observe, signal, select, and execute. This systematic approach ensures you are aware 
+                        of your surroundings before making any maneuver, drastically reducing risk.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">
+                        2. Maintain a Safe Following Distance
+                    </h3>
+                    <p class="mb-4 leading-relaxed">
+                        The two-second rule is non-negotiable. In South Africa, the roads can be unpredictable. 
+                        Leaving a safe gap gives you the crucial time and distance needed to react if the car in front 
+                        stops suddenly or if visibility is reduced due to rain.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">3. Eliminate Distractions</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Your phone is your biggest enemy. Good drivers keep their focus 100% on the task of driving. 
+                        Even a few seconds looking away at a text message can lead to disaster. If you need to check 
+                        your phone or GPS, pull over safely.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">4. Drive Predictably</h3>
+                    <p class="mb-4 leading-relaxed">
+                        If you're driving near trucks, remember they have massive blind spots and require significantly 
+                        longer braking distances. Never cut off a heavy vehicle and give them ample space when merging 
+                        or overtaking. This is essential, especially around Lenasia's industrial zones.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">5. Respect Heavy Vehicles (Code 10 & 14)</h3>
+                    <p class="mb-4 leading-relaxed">
+                        If you're driving near trucks, remember they have massive blind spots and require significantly longer braking distances. Never cut off a heavy vehicle and give them ample space when merging or overtaking. This is essential, especially around Lenasia's industrial zones.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">6. Anticipate Hazards</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Don't just look at the car in front of you. Look far ahead down the road, at pedestrian crossings, 
+                        and at side streets. Scanning the environment allows you to spot potential dangers (a ball rolling 
+                        into the street, a car braking two cars up) and prepare for them long before they become immediate 
+                        threats.
+                    </p>
+
+                     <h3 class="text-2xl font-bold text-primary mt-8 mb-4">7. Be Patient and Courteous</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Road rage and aggressive driving don't save time; they cause accidents. A good driver remains calm, allows others to merge, and doesn't retaliate to aggressive maneuvers. Patience is a sign of confidence and maturity behind the wheel.
+                    </p>
+                    
+                    <div class="mt-8 p-4 bg-red-50 border-l-4 border-primary rounded-lg">
+                        <p class="font-semibold text-gray-700">
+                            Need professional help mastering these skills? S'THULI DRIVING SCHOOL provides intensive, patient training for Code 08, 10, and 14 licenses right here in Lenasia.
+                            <a href="index.html#contact" class="text-primary hover:underline font-bold">Book your lesson today</a>
+                        </p>
+                    </div>
+                `
+            },
+            {
+                id: 3,
+                title: "How Our R1000 Learner's Class Guarantees Pass Success",
+                date: "SEPT 10, 2025",
+                category: "SUCCESS STORY",
+                imageUrl: "assets/images/blog/R1000.Learners.Class.webp",
+                content: `
+                    <p class="mb-6 leading-relaxed">
+                        The Learner's Licence is the first and arguably most crucial step toward driving freedom. 
+                        At S'THULI, we've structured our R1000 Learner's Class to take the stress out of the 
+                        theory test and deliver guaranteed success. Here’s why our students keep passing:
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">1. Focused, Code-Specific Training</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Unlike studying alone, our classes are taught by accredited instructors 
+                        who focus on the most complex sections of the test: Road Signs** and 
+                        Vehicle Controls. We don't just teach the rules; we teach you the logic 
+                        behind the K53 system, which is essential for the test format.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">2. The Power of Practice and Repetition</h3>
+                    <p class="mb-4 leading-relaxed">
+                        We provide up-to-date practice tests and mock exam papers that 
+                        simulate the real test environment. Repetition of these tests builds 
+                        confidence and identifies areas where you need more focus. 
+                        Our students walk into the testing center already knowing what to expect.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold text-primary mt-8 mb-4">3. Comprehensive Study Materials Included</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Your R1000 fee includes all necessary study guides and materials. You won't need to spend extra 
+                        money on outdated books. We provide clear, concise visual aids for all licence codes (08, 10, and 14).
+                    </p>
+
+                    <blockquote class="mt-6 p-4 border-l-4 border-secondary italic bg-gray-100 text-gray-700">
+                        "I was so nervous, but S'Thuli Driving class made the road signs click! I passed my Learner's 
+                        test with a perfect score. Now I can start my Code 08 lessons." - <span class="font-semibold">Sizwe P., Recent Learner's Graduate.</span>
+                    </blockquote>
+
+                    <p class="mt-6 mb-4 leading-relaxed">
+                        Join the many successful drivers who started their journey in our classroom. 
+                        Get your learner's licence with confidence, then move straight into practical lessons with us!
+                    </p>
+                    
+                    <div class="mt-8 p-4 bg-blue-50 border-l-4 border-secondary rounded-lg">
+                        <p class="font-semibold text-gray-700">
+                            Ready to secure your Learner's Licence? Enroll in our next R1000 class now! 
+                            <a href="index.html#contact" class="text-secondary hover:underline font-bold">Book your spot!</a>
+                        </p>
+                    </div>
+                `
+            }
+        ];
+        
+        // 🟢 Scroll Animation Setup Function 🟢
+        function setupScrollAnimations() {
+            // Remove existing observers if any, to ensure we observe the newly loaded DOM elements
+            // (This is implicitly handled because we create a new observer instance below,
+            // but for safety, we ensure all elements are reset before observing.)
+            
+            const animateSections = document.querySelectorAll('.animate-on-scroll');
+
+            // Set up a new Intersection Observer
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add the class to trigger the animation (fade-in and slide-up)
+                        entry.target.classList.add('fade-in-up');
+                        // Stop observing once it has animated
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // Trigger when 10% of the element is visible
+                threshold: 0.1
+            });
+
+            // Start observing all sections
+            animateSections.forEach(section => {
+                // Ensure the initial hidden class is applied if somehow removed
+                section.classList.remove('fade-in-up'); 
+                observer.observe(section);
+            });
+        }
+
+
+        function showHomePage() {
+            mainContentWrapper.innerHTML = originalMainContent;
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+            lucide.createIcons(); // Re-initialize icons
+            setupScrollAnimations(); // IMPORTANT: Re-run animations for the new elements
+        }
+
+        function showBlogPost(postId) {
+            // Close mobile menu if it's open
+            closeMobileMenu();
+
+            const post = blogPosts[postId];
+            if (!post) {
+                console.error("Blog post not found.");
+                return;
+            }
+
+            const postHtml = `
+                <section class="py-20 bg-gray-50">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                        <button onclick="showHomePage()" class="text-primary hover:text-secondary font-semibold mb-8 flex items-center transition duration-150">
+                            <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i> &larr; Back to Home
+                        </button>
+                        
+                        <div class="bg-white rounded-xl shadow-2xl p-6 sm:p-10">
+                            <img src="${post.imageUrl}" alt="${post.title}" class="w-full rounded-lg mb-6 h-100 object-cover object-center">
+                            
+                            <p class="text-sm font-semibold text-secondary mb-2">${post.category} | ${post.date}</p>
+                            <h1 class="text-4xl font-extrabold text-primary mb-6">${post.title}</h1>
+                            
+                            <div class="text-lg text-gray-700 blog-content">
+                                ${post.content}
+                            </div>
+                            
+                            <button onclick="showHomePage()" class="mt-10 cta-button bg-primary text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-blue-800 transition duration-150 flex items-center justify-center">
+                                <i data-lucide="home" class="w-5 h-5 mr-2"></i> Return to Homepage
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            `;
+
+            mainContentWrapper.innerHTML = postHtml;
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+            lucide.createIcons(); // Re-initialize icons
+            // No need to run setupScrollAnimations here as the blog content is loaded instantly
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Store original content on load (MUST BE FIRST)
+            originalMainContent = mainContentWrapper.innerHTML;
+
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Run initial scroll animations setup
+            setupScrollAnimations();
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Make logo always go back to home page view
+            document.getElementById('logo-link').addEventListener('click', function(e) {
+                 e.preventDefault();
+                 showHomePage();
+            });
+
+            // 🟢 Off-Canvas Menu Functionality 🟢
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const offcanvasMenu = document.getElementById('offcanvas-menu');
+            const offcanvasOverlay = document.getElementById('offcanvas-overlay');
+
+            function openMobileMenu() {
+                offcanvasMenu.classList.remove('translate-x-full');
+                offcanvasOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                offcanvasOverlay.classList.add('opacity-100');
+                document.body.classList.add('no-scroll'); // Prevent background scrolling
+            }
+            
+            window.closeMobileMenu = function() {
+                offcanvasMenu.classList.add('translate-x-full');
+                offcanvasOverlay.classList.remove('opacity-100');
+                offcanvasOverlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('no-scroll'); // Restore scrolling
+            }
+
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+            // Links inside the offcanvas menu use inline onclick="closeMobileMenu()"
+
+
+            // FAQ Accordion functionality
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const button = item.querySelector('.faq-question');
+                // The answer div needs no direct access here, just the class toggle
+                // const answer = item.querySelector('.faq-answer'); 
+
+                button.addEventListener('click', () => {
+                    // Close all other open answers
+                    document.querySelectorAll('.faq-item.active').forEach(activeItem => {
+                        if (activeItem !== item) {
+                            activeItem.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Designer Modal Functionality (NEW)
+            const designerModal = document.getElementById('designer-modal');
+
+            window.openDesignerModal = function(e) {
+                e.preventDefault(); // Stop the default anchor link behavior
+                designerModal.style.display = 'flex';
+                document.body.classList.add('no-scroll');
+                lucide.createIcons(); // Re-initialize icons for the modal
+            }
+
+            window.closeDesignerModal = function() {
+                designerModal.style.display = 'none';
+                document.body.classList.remove('no-scroll');
+            }
+
+            // Make showBlogPost globally available
+            window.showBlogPost = showBlogPost;
+
+            // Handle Enquiry Form Submission (WhatsApp Integration)
+            const enquiryForm = document.getElementById('enquiry-form');
+            const formMessage = document.getElementById('form-message');
+            const whatsappNumber = '27718093963'; // S'THULI DRIVING SCHOOL WhatsApp Number
+
+            enquiryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Gather form data
+                const fullName = document.getElementById('full-name').value;
+                const email = document.getElementById('email').value;
+                const licenceCode = document.getElementById('licence-code').value;
+                const message = document.getElementById('message').value;
+
+                // Construct the pre-filled message text
+                let whatsappText = `Hello S'THULI DRIVING SCHOOL! My name is ${fullName}.`;
+                
+                if (licenceCode) {
+                    whatsappText += ` I am interested in the *${licenceCode}* service.`;
+                }
+
+                if (email) {
+                    whatsappText += ` (My email is ${email}).`;
+                }
+                
+                if (message) {
+                    whatsappText += ` My query is: ${message}`;
+                } else {
+                     whatsappText += ` Could you please contact me to discuss booking?`;
+                }
+                
+                // Encode the text for the URL
+                const encodedText = encodeURIComponent(whatsappText.trim());
+                
+                // Construct the final WhatsApp URL
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+                // Open WhatsApp link in a new tab
+                window.open(whatsappUrl, '_blank');
+
+                // Show success message and reset form (optional, since the new tab opens)
+                formMessage.classList.remove('hidden');
+                enquiryForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
